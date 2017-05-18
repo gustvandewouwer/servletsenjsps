@@ -16,7 +16,7 @@ import be.vdab.entities.Persoon;
 /**
  * Servlet implementation class IndexServlet
  */
-@WebServlet("/index.htm")
+@WebServlet(urlPatterns = "/index.htm", name = "indexservlet")
 public class IndexServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String VIEW = "/WEB-INF/JSP/index.jsp";
@@ -25,6 +25,8 @@ public class IndexServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setAttribute("emailAdresWebMaster", this.getInitParameter("emailAdresWebMaster"));
+		
 		request.setAttribute("aantalKeerBekeken", aantalKeerBekeken.incrementAndGet());
 		request.setAttribute("begroeting", new Begroeting());
 		request.setAttribute("zaakvoerder", new Persoon("Luigi", "Peperone", 7, true, 
