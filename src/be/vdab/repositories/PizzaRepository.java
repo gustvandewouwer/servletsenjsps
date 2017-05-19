@@ -14,10 +14,10 @@ import be.vdab.entities.Pizza;
 public class PizzaRepository {
 	private static final Map<Long, Pizza> PIZZAS = new ConcurrentHashMap<>();
 	static {
-		PIZZAS.put(12L, new Pizza(12, "Prosciutto", BigDecimal.valueOf(4), true));
-		PIZZAS.put(14L, new Pizza(14, "Margehrita", BigDecimal.valueOf(5), false));
-		PIZZAS.put(17L, new Pizza(17, "Calzone", BigDecimal.valueOf(4), false));
-		PIZZAS.put(23L, new Pizza(23, "Fungi & Olive qqqqqqq", BigDecimal.valueOf(5), false));
+		PIZZAS.put(12L, new Pizza(12, "Prosciutto", BigDecimal.valueOf(10), true));
+		PIZZAS.put(14L, new Pizza(14, "Margehrita", BigDecimal.valueOf(15), false));
+		PIZZAS.put(17L, new Pizza(17, "Calzone", BigDecimal.valueOf(20), false));
+		PIZZAS.put(23L, new Pizza(23, "Fungi & Olive qqqqqqq", BigDecimal.valueOf(25), false));
 	}
 
 	public List<Pizza> findAll() {
