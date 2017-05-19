@@ -43,7 +43,8 @@ public class Pizza {
 		this.pikant = pikant;
 	}
 
-	public static boolean isNaamValid(String naam) { // Deze static function
+	public static boolean isNaamValid(String naam) { 
+		// Deze static function
 		// valideert de naam zonder een Pizza instance te moeten maken (zie
 		// verder)
 		return naam != null && !naam.isEmpty();

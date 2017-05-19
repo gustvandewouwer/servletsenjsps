@@ -29,6 +29,9 @@ public class PizzasTussenPrijzenServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("request.getQueryString()= " + request.getQueryString());
+		System.out.println("request.getParameter('van')= " + request.getParameter("van"));
+		System.out.println("request.getParameter('tot')= " + request.getParameter("tot"));
 		if (request.getQueryString() != null) {
 			Map<String, String> fouten = new HashMap<>();
 			String vanString = request.getParameter("van");

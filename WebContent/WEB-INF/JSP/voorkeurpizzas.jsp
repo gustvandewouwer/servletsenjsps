@@ -4,7 +4,7 @@
 <html lang='nl'>
 <head>
 <c:import url='/WEB-INF/JSP/head.jsp'>
-	<c:param name='title' value="Voorkeurpizza’s" />
+	<c:param name='title' value="Voorkeurpizza's" />
 </c:import>
 </head>
 <body>
