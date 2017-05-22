@@ -33,5 +33,10 @@
 		</label>
 		<input type='submit' value='Toevoegen' id='toevoegknop'>
 	</form>
+	<script>
+		document.getElementById('toevoegform').onsubmit = function() {
+			document.getElementById('toevoegknop').disabled = true;
+		};
+	</script>
 </body>
 </html>
