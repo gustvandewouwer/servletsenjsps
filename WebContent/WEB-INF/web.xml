@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <context-param>
-    <param-name>emailAdresWebMaster</param-name>
-    <param-value>joske.vermeulen@vdab.beabc</param-value>
-  </context-param>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<context-param>
+		<param-name>emailAdresWebMaster</param-name>
+		<param-value>joske.vermeulen@vdab.beabc</param-value>
+	</context-param>
+	<session-config>
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
 </web-app>

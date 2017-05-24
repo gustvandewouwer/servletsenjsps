@@ -78,7 +78,8 @@ public class PizzaToevoegenServlet extends HttpServlet {
 			}
 			String url = String.format(REDIRECT_URL, request.getContextPath());
 			System.out.println("redirecturl= " + url);
-			response.sendRedirect(url);
+//			response.sendRedirect(url);
+			response.sendRedirect(response.encodeRedirectURL(url));
 		} else {
 			request.setAttribute("fouten", fouten);
 			request.getRequestDispatcher(VIEW).forward(request, response);
