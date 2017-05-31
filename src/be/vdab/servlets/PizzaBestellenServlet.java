@@ -52,6 +52,14 @@ public class PizzaBestellenServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		if (request.getParameter("verwijderMandje") != null) {
+			System.out.println("verwijderMandje= " + request.getParameter("verwijderMandje"));
+			HttpSession session = request.getSession();
+			@SuppressWarnings("unchecked")
+			Set<Long> mandje = (Set<Long>) session.getAttribute(MANDJE);
+			session.removeAttribute(MANDJE);
+		}
+
 		if (request.getParameterValues("id") != null) {
 			System.out.println("PizzaBestellenServlet doPOST - request.getParameterValues(id) != null");
 			HttpSession session = request.getSession();

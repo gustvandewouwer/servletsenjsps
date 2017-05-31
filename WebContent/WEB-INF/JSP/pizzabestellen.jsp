@@ -25,6 +25,14 @@
 			</ul>
 			<input type='submit' value='Toevoegen aan mandje' id='toevoegknop'>
 		</form>
+
+		<c:url value='' var='verwijderMandjeURL'>
+			<c:param name='verwijderMandje' value='true'/>
+		</c:url>
+		<form method='post' action='${verwijderMandjeURL}'>
+			<input type='submit' value='Verwijder mandje'>
+		</form>
+		
 	</c:if>
 	<c:if test='${not empty pizzasInMandje}'>
 		<h2>Uw mandje</h2>
