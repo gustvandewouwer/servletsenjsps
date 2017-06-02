@@ -7,11 +7,13 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
 
 import be.vdab.entities.Pizza;
 import be.vdab.repositories.PizzaRepository;
@@ -24,7 +26,7 @@ public class PizzasServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String VIEW = "/WEB-INF/JSP/pizzas.jsp";
 	private static final String PIZZAS_REQUESTS = "pizzasRequests";
-	private final PizzaRepository pizzaRepository = new PizzaRepository();
+	private final transient PizzaRepository pizzaRepository = new PizzaRepository();
 	private String pizzaFotosPad;
 
 	@Override
@@ -44,4 +46,10 @@ public class PizzasServlet extends HttpServlet {
 						.map(pizza -> pizza.getId()).collect(Collectors.toList()));
 		request.getRequestDispatcher(VIEW).forward(request, response);
 	}
+	
+	@Resource(name = PizzaRepository.JNDI_NAME)
+	void setDataSource(DataSource dataSource) {
+		pizzaRepository.setDataSource(dataSource);
+	}
+
 }

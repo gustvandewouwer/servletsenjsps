@@ -28,7 +28,7 @@ public class ServletFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		request.setCharacterEncoding("UTF-8");
 
-		System.out.println("doFilter in ServletFilter voor *.htm ");
+		System.out.println("ServletFilter - doFilter");
 		
 		// pass the request along the filter chain
 		chain.doFilter(request, response);
@@ -38,7 +38,7 @@ public class ServletFilter implements Filter {
 	 * @see Filter#init(FilterConfig)
 	 */
 	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
+		System.out.println("ServletFilter - init");
 	}
 
 }

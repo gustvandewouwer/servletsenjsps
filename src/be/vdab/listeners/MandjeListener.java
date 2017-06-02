@@ -20,7 +20,7 @@ public class MandjeListener implements ServletContextListener, HttpSessionAttrib
 
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
-		System.out.println("contextInitialized");
+		System.out.println("MandjeListener - contextInitialized");
 		event.getServletContext().setAttribute(AANTAL_MANDJES, new AtomicInteger());
 	}
 
