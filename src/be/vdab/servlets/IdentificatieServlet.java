@@ -41,7 +41,6 @@ public class IdentificatieServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("identificatie - doPOST");
-		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		session.setAttribute("gebruikersnaam", request.getParameter("gebruikersnaam"));
 		response.sendRedirect(request.getRequestURI()); // redirect->huidige
