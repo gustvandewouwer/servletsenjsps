@@ -9,10 +9,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import be.vdab.entities.Pizza;
 
 public class PizzaRepository extends AbstractRepository {
+
+	private final static Logger LOGGER = Logger.getLogger(PizzaRepository.class.getName());
+	
 	private static final String BEGIN_SELECT = "select id, naam, prijs, pikant from pizzas ";
 	private static final String FIND_ALL = BEGIN_SELECT + "order by naam";
 	private static final String READ = BEGIN_SELECT + "where id=?";
@@ -29,6 +34,7 @@ public class PizzaRepository extends AbstractRepository {
 			}
 			return pizzas;
 		} catch (SQLException ex) {
+			LOGGER.log(Level.SEVERE, "Probleem met database pizzaluigi", ex);
 			throw new RepositoryException(ex);
 		}
 	}
@@ -49,6 +55,7 @@ public class PizzaRepository extends AbstractRepository {
 				return Optional.empty();
 			}
 		} catch (SQLException ex) {
+			LOGGER.log(Level.SEVERE, "Probleem met database pizzaluigi", ex);
 			throw new RepositoryException(ex);
 		}
 	}
@@ -66,6 +73,7 @@ public class PizzaRepository extends AbstractRepository {
 				return pizzas;
 			}
 		} catch (SQLException ex) {
+			LOGGER.log(Level.SEVERE, "Probleem met database pizzaluigi", ex);
 			throw new RepositoryException(ex);
 		}
 	}
@@ -82,8 +90,8 @@ public class PizzaRepository extends AbstractRepository {
 				pizza.setId(resultSet.getLong(1));
 			}
 		} catch (SQLException ex) {
+			LOGGER.log(Level.SEVERE, "Probleem met database pizzaluigi", ex);
 			throw new RepositoryException(ex);
 		}
 	}
-
 }
