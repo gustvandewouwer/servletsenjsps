@@ -31,6 +31,11 @@ public class IdentificatieServlet extends HttpServlet {
 			} else {
 				System.out.println("identificatie - doGET - gebruikersnaam is null");
 			}
+			String locale = request.getParameter("locale");
+			if (locale != null) {
+				System.out.println("identificatie - doGET - locale = " + locale);
+				request.getSession().setAttribute("locale", locale);
+			}			
 		} else {
 			System.out.println("identificatie - doGET - session is null");
 		}
