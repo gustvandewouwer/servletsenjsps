@@ -25,6 +25,7 @@ public class PizzaRepository extends AbstractRepository {
 	private static final String CREATE = "insert into pizzas(naam, prijs, pikant) values (?, ?, ?)";
 
 	public List<Pizza> findAll() {
+		System.out.println("datasource= " + dataSource);
 		try (Connection connection = dataSource.getConnection();
 				Statement statement = connection.createStatement();
 				ResultSet resultSet = statement.executeQuery(FIND_ALL)) {
